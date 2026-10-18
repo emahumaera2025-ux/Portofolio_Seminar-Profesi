@@ -30,6 +30,12 @@
         .glass-nav { background: rgba(255,255,255,0.88); backdrop-filter: blur(16px) saturate(160%); -webkit-backdrop-filter: blur(16px) saturate(160%); border-bottom: 1px solid rgba(236,72,153,0.18); box-shadow: 0 4px 20px rgba(147,51,234,0.06); z-index: 40; }
         .blob-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
         ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #fdf2f8; } ::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 10px; } ::-webkit-scrollbar-thumb:hover { background: #d946ef; }
+        
+        /* TAMBAHAN CSS UNTUK MENGHILANGKAN SCROLLBAR PINK DI NAVIGASI */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        /* ------------------------------------------------------------------- */
+
         .hidden { display: none !important; }
         #splash-screen { position: fixed; inset: 0; background: linear-gradient(135deg, #fdf4ff 0%, #fce7f3 50%, #fae8ff 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 50; }
         @keyframes pulseGlow { 0%,100% { opacity:0.4; transform:scale(1);} 50% {opacity:0.7; transform:scale(1.05);} }
@@ -111,6 +117,7 @@
                             <span class="text-[10px] text-fuchsia-500 font-extrabold uppercase tracking-widest">PPG Prajabatan</span>
                         </div>
                     </div>
+                    <!-- Perhatikan class scrollbar-hide disini -->
                     <nav class="flex items-center gap-1 sm:gap-2 overflow-x-auto whitespace-nowrap scrollbar-hide">
                         <button onclick="showSection('beranda')" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-slate-700 hover:text-purple-600 transition-all duration-200 menu-active" id="nav-beranda">Beranda</button>
                         <button onclick="showSection('profil')" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-slate-700 hover:text-purple-600 transition-all duration-200" id="nav-profil">Profil</button>
@@ -118,6 +125,11 @@
                         <button onclick="showSection('refleksi-mk')" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-slate-700 hover:text-purple-600 transition-all duration-200" id="nav-refleksi-mk">Refleksi PPG & Mata Kuliah</button>
                         <button onclick="showSection('inovasi')" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-slate-700 hover:text-purple-600 transition-all duration-200" id="nav-inovasi">Inovasi</button>
                         <button onclick="showSection('dokumentasi')" class="nav-btn px-4 py-2 rounded-full text-xs font-bold text-slate-700 hover:text-purple-600 transition-all duration-200" id="nav-dokumentasi">Dokumentasi</button>
+                        <!-- ✅ MENU MODE PRESENTASI SEMINAR (TAMBAHAN) -->
+                        <a href="https://ppg-indonesia.my.canva.site/dahyutrcoac" target="_blank" rel="noopener" class="px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 shadow-md shadow-pink-500/30 hover:shadow-glow hover:scale-105 transition-all duration-200 flex items-center gap-1.5 ml-2 shrink-0">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            Mode Presentasi
+                        </a>
                     </nav>
                 </div>
             </div>
@@ -219,7 +231,8 @@
                             <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-500 text-white flex items-center justify-center shrink-0 shadow-md"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                             <div>
                                 <h3 class="font-display text-xl md:text-2xl font-bold mb-4 text-purple-950">Visi Pribadi untuk Pendidikan di Indonesia</h3>
-                                <p class="text-purple-950/80 leading-relaxed text-justify text-sm md:text-base font-medium">Visi saya adalah melihat pendidikan di Indonesia menjadi tempat yang mampu mengembangkan potensi setiap peserta didik tanpa membedakan latar belakang, kemampuan, maupun kondisi mereka. Saya ingin sekolah tidak hanya menjadi tempat untuk mengejar nilai, tetapi juga tempat yang membuat peserta didik berani berpikir, berpendapat, bekerja sama, dan memiliki karakter yang baik. Bagi saya, keberhasilan pendidikan bukan hanya ketika peserta didik memperoleh nilai tinggi, tetapi ketika mereka memiliki bekal untuk menghadapi kehidupan, mampu menyelesaikan masalah, dan menjadi pribadi yang bermanfaat bagi lingkungan sekitarnya.</p>
+                                <!-- ✅ VISI PENDIDIKAN DIPERBARUI -->
+                                <p class="text-purple-950/80 leading-relaxed text-justify text-sm md:text-base font-medium">Mewujudkan pendidikan Indonesia yang kreatif, inovatif, dan berpusat pada kebutuhan murid, sehingga setiap murid dapat mengembangkan potensinya tanpa membedakan latar belakang maupun kemampuannya. Melalui pembelajaran yang bermakna, saya ingin membentuk murid yang berkarakter, mampu berpikir kritis, mandiri, berani berpendapat, dan bekerja sama dengan tetap melestarikan budaya lokal dan menjunjung tinggi nilai-nilai Pancasila.</p>
                             </div>
                         </div>
                     </div>
@@ -228,7 +241,8 @@
                             <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-pink-500 text-white flex items-center justify-center shrink-0 shadow-md"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></div>
                             <div>
                                 <h3 class="font-display text-xl md:text-2xl font-bold mb-4 text-purple-950">Visi Pribadi sebagai Calon Guru</h3>
-                                <p class="text-purple-950/80 leading-relaxed text-justify text-sm md:text-base font-medium">Visi saya sebagai calon guru lahir dari pengalaman pribadi saya ketika duduk di bangku sekolah dasar. Saat kelas 1 SD, guru saya pernah bertanya kepada kami, "Kalau sudah besar nanti ingin menjadi apa?" Ketika tiba giliran saya menjawab, saya justru menangis karena tidak tahu harus mengatakan apa. Saat itu saya belum memiliki gambaran tentang cita-cita saya. Memasuki kelas 2 SD, saya bertemu dengan seorang guru bernama Ibu Hamsah. Beliau adalah sosok yang sabar, tegas, penuh empati, dan memiliki cara mengajar yang membuat saya mudah memahami pelajaran. Kehadiran beliau selalu kami nantikan. Dari beliau, saya merasakan bahwa seorang guru dapat memberikan rasa nyaman sekaligus semangat untuk belajar. Sejak saat itu, ketika kembali ditanya tentang cita-cita, saya dapat menjawab dengan yakin bahwa saya ingin menjadi guru seperti Ibu Hamsah. Pengalaman itulah yang membentuk visi saya sebagai calon guru. Saya ingin menjadi guru yang tidak hanya menyampaikan materi pelajaran, tetapi juga menjadi sosok yang mampu menginspirasi, membimbing, dan mendampingi peserta didik dalam menemukan potensi terbaik mereka. Saya ingin menjadi guru yang kehadirannya membawa semangat belajar dan dikenang karena ketulusan serta dedikasinya, bukan karena rasa takut. Tentu semua itu saya lakukan dengan tetap menjaga batasan yang sehat dan profesional dalam hubungan antara guru dan peserta didik. Saya percaya bahwa setiap guru memiliki kesempatan untuk meninggalkan jejak dalam kehidupan muridnya. Sebagaimana Ibu Hamsah pernah menjadi sosok yang membantu saya menemukan arah dan cita-cita hidup, saya juga berharap dapat menjadi guru yang membantu peserta didik menemukan potensi, kepercayaan diri, dan masa depan mereka sendiri.</p>
+                                <!-- ✅ VISI CALON GURU DIPERBARUI -->
+                                <p class="text-purple-950/80 leading-relaxed text-justify text-sm md:text-base font-medium">Menjadi guru profesional yang inovatif dengan menghadirkan pembelajaran yang adaptif, aman, menyenangkan, dan bermakna sesuai kebutuhan murid. Saya ingin menjadi guru yang tidak hanya menyampaikan materi, tetapi juga menginspirasi, membimbing, dan mendampingi murid mengembangkan potensinya dengan ketulusan, dedikasi, serta tetap menjaga profesionalitas.</p>
                             </div>
                         </div>
                     </div>
@@ -1022,7 +1036,6 @@
                     "Tidak semua platform secara otomatis menyimpan atau merekap jawaban murid."
                 ],
                 hasilPenerapan: "LKPD digunakan pada pembelajaran Informatika materi Struktur Data dan Pengolahan Dokumen. Berikut dokumentasi kegiatan dan contoh hasil kerja LKPD murid.",
-                /* ⬇️ TAMBAHAN c1-c5 DI GALERI PENERAPAN LKPD ⬇️ */
                 galeriPenerapan: [
                     { src: "LKPD1.jpeg", caption: "Dokumentasi 1" },
                     { src: "LKPD2.jpeg", caption: "Dokumentasi 2" },
